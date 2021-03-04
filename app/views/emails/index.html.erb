@@ -1,0 +1,22 @@
+<%= link_to "Recevoir un email", emails_path, class:"btn btn-secondary", method: "post", remote: true %>
+<br><br><br>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Liste des emails</th>
+      <th scope="col">Email sélectionné</th>
+    </tr>
+  </thead>
+  <tbody id="create">
+    <% Email.all.each do |email| %>
+      <tr id="delete-<%= email.id  %>">
+        <% if email.read == true %>
+          <td id="link-<%= email.id  %>"><%= link_to email.object, email_path(email.id), class:"text-muted", remote: true %></td>
+        <% else %>
+          <td id="link-<%= email.id  %>"><%= link_to email.object, email_path(email.id), class:"text-danger", remote: true %></td>
+        <% end %>
+        <td id="show-<%= email.id %>"></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

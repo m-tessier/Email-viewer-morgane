@@ -1,0 +1,4 @@
+alert("le fichier JS est exécuté pour créer un email.");
+console.log('je suis là!');
+
+document.querySelector("#show-"+ "<%= @email.id %>").insertAdjacentHTML("beforeend", "<%= j render 'show', email: @email %>");

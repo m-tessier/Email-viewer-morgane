@@ -1,0 +1,6 @@
+<h1><%= @email.object %></h1>
+<p><%= @email.body %></p>
+<div class="btn-group" role="group" aria-label="...">
+  <%= link_to "Supprimer", email_path(@email.id), class:"btn btn-sm btn-outline-dark", method: :delete, remove: true%>
+  <%= link_to "Marquer comme non-lu", email_path, class:"btn btn-sm btn-outline-dark", remove: true%>
+</div>

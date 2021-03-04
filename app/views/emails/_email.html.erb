@@ -1,0 +1,8 @@
+<tr id="delete-<%= email.id  %>">
+  <% if email.read == true %>
+    <td id="link-<%= email.id  %>"><%= link_to email.object, email_path(email.id), class:"text-muted", remote: true %></td>
+  <% else %>
+    <td id="link-<%= email.id  %>"><%= link_to email.object, email_path(email.id), class:"text-danger", remote: true %></td>
+  <% end %>
+  <td id="show-<%= email.id %>"></td>
+</tr>
